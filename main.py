@@ -23,7 +23,7 @@ def main():
     if "\n" in line or "\r" in line:
         raise SystemExit("entry must be a single line")
     if not 1 <= len(line) <= 400:
-        raise SystemExit("entry must be 1-400 characters")
+        raise SystemExit(f"entry must be 1-400 characters, got {len(line)}")
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
